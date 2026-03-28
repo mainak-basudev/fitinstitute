@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIT Institute — Future Innovator Training | Dubai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #C8102E;
+    --red-deep: #9B0C22;
+    --red-bright: #E8102E;
+    --red-pale: #fdf0f2;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --ink: #1A1014;
+    --ink-mid: #3D2830;
+    --smoke: #F7F4F0;
+    --smoke2: #EEE9E3;
+    --cream: #FBF9F6;
+    --white: #FFFFFF;
+    --text-body: #4A3840;
+    --text-muted: #9A8A90;
+    --border: rgba(200,16,46,0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --display: 'Bebas Neue', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    height: 80px;
+    background: rgba(251,249,246,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(200,16,46,0.12);
+    box-shadow: 0 2px 30px rgba(26,16,20,0.06);
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-size: 12px; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-body);
+    text-decoration: none; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red); color: var(--white);
+    padding: 10px 28px; font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.3s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .nav-cta:hover { background: var(--red-deep); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 70% at 80% 40%, rgba(200,16,46,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 50% at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      linear-gradient(135deg, #FBF9F6 0%, #F3EDE6 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.025;
+    background-image:
+      linear-gradient(rgba(26,16,20,0.8) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,16,20,0.8) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .hero-left {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 60px 80px 80px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(200,16,46,0.07); border: 1px solid rgba(200,16,46,0.25);
+    padding: 8px 18px; margin-bottom: 40px;
+    width: fit-content;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero-badge-text { font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--red); }
+  .hero-title {
+    font-family: var(--serif); font-size: clamp(52px, 6vw, 88px);
+    font-weight: 300; line-height: 1.05; margin-bottom: 12px;
+    color: var(--ink);
+    animation: fadeUp 1s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--red); }
+  .hero-title-bold {
+    font-family: var(--display); font-size: clamp(58px, 7vw, 100px);
+    letter-spacing: 6px; color: var(--ink); line-height: 1;
+    margin-bottom: 32px;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-subtitle {
+    font-size: 15px; line-height: 1.8; color: var(--text-body);
+    max-width: 440px; margin-bottom: 50px;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+  .hero-actions {
+    display: flex; align-items: center; gap: 24px;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .btn-primary {
+    background: var(--red); color: var(--white);
+    padding: 16px 40px; font-size: 12px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+    position: relative;
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: var(--red-deep); opacity: 0; transition: opacity 0.3s;
+  }
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-outline {
+    color: var(--text-body); font-size: 12px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+    display: flex; align-items: center; gap: 10px; transition: color 0.3s;
+  }
+  .btn-outline::before { content: ''; width: 28px; height: 1px; background: var(--text-muted); transition: width 0.3s, background 0.3s; }
+  .btn-outline:hover { color: var(--red); }
+  .btn-outline:hover::before { width: 40px; background: var(--red); }
+
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 60px 60px 60px 0;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  .hero-visual {
+    position: relative; width: 100%; max-width: 500px;
+  }
+  .hero-img-frame {
+    width: 100%; aspect-ratio: 3/4; max-height: 600px;
+    position: relative; overflow: hidden;
+  }
+  .hero-img-frame::before {
+    content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, var(--red) 0%, transparent 50%, var(--gold) 100%);
+    z-index: 1;
+  }
+  .hero-img-inner {
+    position: absolute; inset: 2px; overflow: hidden; z-index: 2;
+    background: var(--red-pale);
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* Decorative city skyline illustration */
+  .skyline-svg { width: 100%; height: 100%; opacity: 0.8; }
+
+  .hero-stat-strip {
+    position: absolute; bottom: -20px; left: -30px; right: 60px;
+    background: var(--white); border: 1px solid rgba(200,16,46,0.15);
+    display: grid; grid-template-columns: repeat(4,1fr);
+    z-index: 10; box-shadow: 0 20px 60px rgba(26,16,20,0.10);
+  }
+  .stat-item {
+    padding: 20px 16px; text-align: center;
+    border-right: 1px solid rgba(26,16,20,0.07);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--display); font-size: 30px; color: var(--red); letter-spacing: 2px; display: block; }
+  .stat-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-top: 2px; display: block; }
+
+  /* ─── TICKER ─── */
+  .ticker {
+    background: var(--red); padding: 14px 0; overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 50px;
+  }
+  .ticker-track {
+    display: flex; gap: 0; white-space: nowrap;
+    animation: ticker 30s linear infinite;
+  }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .ticker-item {
+    display: inline-flex; align-items: center; gap: 24px;
+    padding: 0 40px; font-size: 11px; letter-spacing: 3px; font-weight: 600;
+    text-transform: uppercase; color: rgba(255,255,255,0.9);
+  }
+  .ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0; }
+
+  /* ─── SECTION BASE ─── */
+  section { position: relative; }
+  .section-label {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--red); }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(36px, 5vw, 62px);
+    font-weight: 300; line-height: 1.1; color: var(--ink);
+  }
+  .section-title strong { font-weight: 600; }
+  .section-title em { font-style: italic; color: var(--red); }
+
+  /* ─── PROGRAMS ─── */
+  .programs {
+    padding: 120px 80px;
+    background: var(--smoke);
+  }
+  .programs-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: end; margin-bottom: 70px;
+  }
+  .programs-desc { font-size: 15px; line-height: 1.8; color: var(--text-body); max-width: 420px; margin-top: 24px; }
+  .view-all-link {
+    align-self: flex-end; text-align: right;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted);
+    text-decoration: none; display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+    transition: color 0.3s;
+  }
+  .view-all-link::after { content: '→'; font-size: 18px; transition: transform 0.3s; }
+  .view-all-link:hover { color: var(--red); }
+  .view-all-link:hover::after { transform: translateX(6px); }
+
+  .programs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .program-card {
+    background: var(--white); padding: 40px 30px;
+    border-top: 3px solid transparent;
+    transition: all 0.4s;
+    cursor: pointer; position: relative; overflow: hidden;
+    box-shadow: 0 2px 20px rgba(26,16,20,0.05);
+  }
+  .program-card::before {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0;
+    background: linear-gradient(to top, rgba(200,16,46,0.04), transparent);
+    transition: height 0.4s;
+  }
+  .program-card:hover { border-top-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(200,16,46,0.1); }
+  .program-card:hover::before { height: 100%; }
+  .program-icon {
+    width: 52px; height: 52px; margin-bottom: 30px;
+    border: 1px solid rgba(200,16,46,0.2);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.4s;
+  }
+  .program-card:hover .program-icon { background: rgba(200,16,46,0.07); }
+  .program-icon svg { width: 24px; height: 24px; stroke: var(--red); fill: none; stroke-width: 1.5; }
+  .program-count { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+  .program-name { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.3; margin-bottom: 16px; color: var(--ink); }
+  .program-desc-short { font-size: 13px; line-height: 1.7; color: var(--text-body); }
+  .program-courses { margin-top: 28px; border-top: 1px solid rgba(26,16,20,0.07); padding-top: 20px; }
+  .course-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 1px;
+    color: var(--text-muted); padding: 5px 12px;
+    border: 1px solid rgba(26,16,20,0.1); margin: 4px 4px 0 0;
+    transition: all 0.3s;
+  }
+  .program-card:hover .course-tag { border-color: rgba(200,16,46,0.2); color: var(--red); }
+
+  /* ─── WHY FIT ─── */
+  .why {
+    padding: 120px 80px;
+    background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+  }
+  .why-visual {
+    position: relative;
+  }
+  .why-img-wrap {
+    aspect-ratio: 4/5; background: var(--smoke2);
+    position: relative; overflow: hidden;
+  }
+  .why-img-wrap::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, rgba(200,16,46,0.1) 0%, transparent 60%);
+  }
+  .why-accent {
+    position: absolute; bottom: -30px; right: -30px;
+    width: 200px; height: 200px;
+    background: var(--red); display: flex; align-items: center; justify-content: center;
+    flex-direction: column; text-align: center; padding: 20px;
+  }
+  .why-accent-num { font-family: var(--display); font-size: 52px; color: var(--white); letter-spacing: 2px; line-height: 1; }
+  .why-accent-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 6px; }
+  .why-num-small { font-size: 24px; }
+
+  .why-content { padding-right: 20px; }
+  .why-features { margin-top: 48px; display: flex; flex-direction: column; gap: 0; }
+  .why-feature {
+    display: grid; grid-template-columns: 48px 1fr;
+    gap: 20px; align-items: start;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(26,16,20,0.08);
+  }
+  .feature-num {
+    font-family: var(--display); font-size: 32px; color: rgba(200,16,46,0.25);
+    line-height: 1; padding-top: 4px;
+  }
+  .feature-text h4 { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  .feature-text p { font-size: 13px; line-height: 1.7; color: var(--text-body); }
+
+  /* ─── STATS BAND ─── */
+  .stats-band {
+    background: var(--red);
+    padding: 60px 80px;
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 2px;
+  }
+  .band-stat {
+    text-align: center; padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .band-stat:last-child { border-right: none; }
+  .band-num { font-family: var(--display); font-size: 56px; letter-spacing: 2px; color: var(--white); display: block; line-height: 1; }
+  .band-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 8px; display: block; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials {
+    padding: 120px 80px;
+    background: var(--smoke);
+  }
+  .testimonials-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .testi-card {
+    background: var(--white); padding: 40px 36px;
+    position: relative; overflow: hidden;
+    transition: transform 0.4s;
+    box-shadow: 0 2px 20px rgba(26,16,20,0.05);
+  }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(200,16,46,0.08); }
+  .testi-card::before {
+    content: '\201C'; position: absolute; top: 10px; right: 24px;
+    font-family: var(--serif); font-size: 120px; color: rgba(200,16,46,0.06);
+    line-height: 1; pointer-events: none;
+  }
+  .testi-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+  .testi-stars span { color: var(--gold); font-size: 14px; }
+  .testi-text { font-family: var(--serif); font-size: 16px; line-height: 1.7; color: var(--ink-mid); margin-bottom: 28px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--red); display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 18px; color: white; flex-shrink: 0;
+  }
+  .testi-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .testi-course { font-size: 11px; color: var(--text-muted); margin-top: 2px; letter-spacing: 1px; }
+
+  /* ─── KHDA BADGE ─── */
+  .accred {
+    padding: 80px;
+    background: var(--red-pale);
+    display: flex; align-items: center; justify-content: space-between; gap: 60px;
+    border-top: 1px solid rgba(200,16,46,0.12);
+    border-bottom: 1px solid rgba(200,16,46,0.12);
+  }
+  .accred-left { max-width: 500px; }
+  .accred-title { font-family: var(--serif); font-size: 38px; font-weight: 300; line-height: 1.2; margin-bottom: 16px; color: var(--ink); }
+  .accred-title strong { font-weight: 600; color: var(--red); }
+  .accred-text { font-size: 14px; line-height: 1.8; color: var(--text-body); }
+  .accred-badges { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .accred-badge {
+    border: 1px solid rgba(200,16,46,0.25); padding: 16px 28px;
+    text-align: center; background: var(--white);
+    box-shadow: 0 2px 12px rgba(200,16,46,0.07);
+  }
+  .accred-badge-name { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 600; }
+  .accred-badge-sub { font-size: 10px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    background: var(--red);
+    padding: 100px 80px;
+    display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: 'FIT'; position: absolute; right: -20px; top: -30px;
+    font-family: var(--display); font-size: 260px; color: rgba(0,0,0,0.1);
+    line-height: 1; pointer-events: none; letter-spacing: 10px;
+  }
+  .cta-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+  .cta-title { font-family: var(--serif); font-size: clamp(32px, 4vw, 56px); font-weight: 300; line-height: 1.1; color: var(--white); }
+  .cta-title em { font-style: italic; }
+  .cta-actions { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; position: relative; z-index: 2; }
+  .btn-white {
+    background: var(--white); color: var(--red);
+    padding: 16px 40px; font-size: 12px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none;
+    display: inline-block; transition: all 0.3s; white-space: nowrap;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-white:hover { background: var(--smoke); }
+  .btn-ghost {
+    color: rgba(255,255,255,0.8); font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+    transition: color 0.3s;
+  }
+  .btn-ghost:hover { color: var(--white); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 80px 80px 40px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px; margin-bottom: 60px;
+  }
+  .footer-brand-logo {
+    font-family: var(--display); font-size: 36px; letter-spacing: 4px;
+    color: var(--white); margin-bottom: 16px; display: block;
+  }
+  .footer-brand-logo span { color: var(--red); }
+  .footer-tagline { font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(255,255,255,0.4); margin-bottom: 24px; line-height: 1.6; }
+  .footer-social { display: flex; gap: 12px; }
+  .social-btn {
+    width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4); font-size: 12px; text-decoration: none;
+    transition: all 0.3s; font-weight: 600;
+  }
+  .social-btn:hover { border-color: var(--red); color: var(--red); }
+  .footer-col h5 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
+  .footer-contact-item svg { width: 14px; height: 14px; stroke: var(--red); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+  .footer-contact-item span { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 30px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 1px; }
+  .footer-bottom-links { display: flex; gap: 24px; }
+  .footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.3s; }
+  .footer-bottom-links a:hover { color: var(--red); }
+
+  /* ─── DUBAI VISUAL in why section ─── */
+  .dubai-illustration {
+    width: 100%; height: 100%; min-height: 500px;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #0A0A0A, #1a0a0e);
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @media (max-width: 1024px) {
+    nav { padding: 0 30px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 60px 30px; }
+    .hero-right { display: none; }
+    .programs { padding: 80px 30px; }
+    .programs-header { grid-template-columns: 1fr; gap: 20px; }
+    .programs-grid { grid-template-columns: 1fr 1fr; }
+    .why { grid-template-columns: 1fr; padding: 80px 30px; }
+    .why-visual { display: none; }
+    .stats-band { padding: 40px 30px; grid-template-columns: 1fr 1fr; }
+    .testimonials { padding: 80px 30px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .accred { padding: 60px 30px; flex-direction: column; }
+    .cta-section { padding: 80px 30px; grid-template-columns: 1fr; }
+    footer { padding: 60px 30px 30px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .hero-stat-strip { position: static; margin-top: 30px; }
+    .ticker { margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">F<span>I</span>T <span style="font-size:16px;letter-spacing:2px;font-family:var(--sans);font-weight:300;color:rgba(255,255,255,0.4)">INSTITUTE</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Programs</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Enroll Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span class="hero-badge-text">KHDA Approved — Dubai, UAE</span>
+    </div>
+    <h1 class="hero-title">Invest in <em>Your</em></h1>
+    <div class="hero-title-bold">FUTURE</div>
+    <p class="hero-subtitle">Gain world-class, in-demand skills at Dubai's premier training institute. Over 20 professional programs designed for the leaders of tomorrow — taught by industry experts.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Explore Programs</a>
+      <a href="#" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-img-frame">
+        <div class="hero-img-inner">
+          <!-- Dubai skyline illustration -->
+          <svg class="skyline-svg" viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#f7e8e8"/>
+                <stop offset="60%" style="stop-color:#fdf0f0"/>
+                <stop offset="100%" style="stop-color:#f5e0e0"/>
+              </linearGradient>
+              <linearGradient id="bldg1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#d4555a"/>
+                <stop offset="100%" style="stop-color:#b03040"/>
+              </linearGradient>
+              <linearGradient id="red-glow" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" style="stop-color:#C8102E;stop-opacity:0.3"/>
+                <stop offset="100%" style="stop-color:#C8102E;stop-opacity:0"/>
+              </linearGradient>
+            </defs>
+            <rect width="500" height="620" fill="url(#sky)"/>
+            <!-- Glow -->
+            <ellipse cx="250" cy="480" rx="300" ry="130" fill="url(#red-glow)" opacity="0.5"/>
+            <!-- Sun -->
+            <circle cx="380" cy="80" r="40" fill="rgba(200,16,46,0.08)" />
+            <circle cx="380" cy="80" r="28" fill="rgba(200,16,46,0.12)" />
+            <circle cx="380" cy="80" r="16" fill="rgba(200,16,46,0.2)" />
+
+            <!-- Burj Khalifa inspired center tower -->
+            <g opacity="0.95">
+              <polygon points="242,50 258,50 265,450 235,450" fill="#C8102E" opacity="0.85"/>
+              <polygon points="246,50 254,50 258,200 242,200" fill="rgba(255,100,80,0.3)"/>
+              <!-- tiers -->
+              <rect x="228" y="200" width="44" height="4" fill="rgba(150,0,20,0.5)"/>
+              <rect x="233" y="280" width="34" height="3" fill="rgba(150,0,20,0.4)"/>
+              <rect x="237" y="340" width="26" height="3" fill="rgba(150,0,20,0.3)"/>
+              <!-- antenna -->
+              <line x1="250" y1="50" x2="250" y2="10" stroke="#9B0C22" stroke-width="2"/>
+              <circle cx="250" cy="10" r="3" fill="#C8102E"/>
+              <!-- windows -->
+              <g fill="rgba(255,255,255,0.5)">
+                <rect x="244" y="220" width="4" height="6"/><rect x="252" y="220" width="4" height="6"/>
+                <rect x="244" y="240" width="4" height="6"/><rect x="252" y="240" width="4" height="6"/>
+                <rect x="244" y="260" width="4" height="6"/><rect x="252" y="260" width="4" height="6"/>
+                <rect x="244" y="300" width="4" height="6"/><rect x="252" y="300" width="4" height="6"/>
+                <rect x="244" y="320" width="4" height="6"/><rect x="252" y="320" width="4" height="6"/>
+              </g>
+            </g>
+
+            <!-- Left tall building -->
+            <g opacity="0.88">
+              <rect x="130" y="180" width="70" height="270" fill="#c44050" opacity="0.7"/>
+              <rect x="155" y="160" width="20" height="20" fill="#c44050" opacity="0.7"/>
+              <rect x="160" y="140" width="10" height="20" fill="#b03040" opacity="0.7"/>
+              <g fill="rgba(255,255,255,0.4)">
+                <rect x="140" y="200" width="8" height="10"/><rect x="154" y="200" width="8" height="10"/><rect x="168" y="200" width="8" height="10"/><rect x="182" y="200" width="8" height="10"/>
+                <rect x="140" y="220" width="8" height="10"/><rect x="154" y="220" width="8" height="10"/><rect x="168" y="220" width="8" height="10"/>
+                <rect x="140" y="250" width="8" height="10"/><rect x="154" y="250" width="8" height="10"/><rect x="168" y="250" width="8" height="10"/><rect x="182" y="250" width="8" height="10"/>
+                <rect x="140" y="280" width="8" height="10"/><rect x="168" y="280" width="8" height="10"/>
+                <rect x="140" y="310" width="8" height="10"/><rect x="154" y="310" width="8" height="10"/><rect x="168" y="310" width="8" height="10"/><rect x="182" y="310" width="8" height="10"/>
+                <rect x="140" y="340" width="8" height="10"/><rect x="154" y="340" width="8" height="10"/>
+                <rect x="140" y="370" width="8" height="10"/><rect x="154" y="370" width="8" height="10"/><rect x="168" y="370" width="8" height="10"/>
+              </g>
+            </g>
+
+            <!-- Right building cluster -->
+            <g opacity="0.85">
+              <rect x="300" y="220" width="55" height="230" fill="#c44050" opacity="0.65"/>
+              <rect x="315" y="200" width="25" height="20" fill="#b03040" opacity="0.7"/>
+              <g fill="rgba(255,255,255,0.4)">
+                <rect x="308" y="240" width="8" height="10"/><rect x="322" y="240" width="8" height="10"/><rect x="336" y="240" width="8" height="10"/>
+                <rect x="308" y="260" width="8" height="10"/><rect x="322" y="260" width="8" height="10"/>
+                <rect x="308" y="290" width="8" height="10"/><rect x="322" y="290" width="8" height="10"/><rect x="336" y="290" width="8" height="10"/>
+                <rect x="308" y="320" width="8" height="10"/><rect x="336" y="320" width="8" height="10"/>
+                <rect x="308" y="350" width="8" height="10"/><rect x="322" y="350" width="8" height="10"/>
+                <rect x="308" y="380" width="8" height="10"/><rect x="322" y="380" width="8" height="10"/><rect x="336" y="380" width="8" height="10"/>
+              </g>
+            </g>
+
+            <!-- Far left low buildings -->
+            <rect x="20" y="310" width="90" height="140" fill="#d0606a" opacity="0.5"/>
+            <rect x="30" y="280" width="30" height="30" fill="#c44050" opacity="0.55"/>
+            <g fill="rgba(255,255,255,0.3)">
+              <rect x="28" y="320" width="6" height="8"/><rect x="40" y="320" width="6" height="8"/><rect x="52" y="320" width="6" height="8"/>
+              <rect x="28" y="340" width="6" height="8"/><rect x="52" y="340" width="6" height="8"/>
+              <rect x="28" y="360" width="6" height="8"/><rect x="40" y="360" width="6" height="8"/>
+              <rect x="70" y="320" width="6" height="8"/><rect x="82" y="320" width="6" height="8"/>
+              <rect x="70" y="340" width="6" height="8"/>
+            </g>
+
+            <!-- Far right buildings -->
+            <rect x="390" y="290" width="100" height="160" fill="#d0606a" opacity="0.5"/>
+            <rect x="410" y="260" width="25" height="30" fill="#c44050" opacity="0.55"/>
+            <g fill="rgba(255,255,255,0.3)">
+              <rect x="398" y="308" width="6" height="8"/><rect x="410" y="308" width="6" height="8"/><rect x="422" y="308" width="6" height="8"/>
+              <rect x="398" y="328" width="6" height="8"/><rect x="422" y="328" width="6" height="8"/>
+              <rect x="448" y="308" width="6" height="8"/><rect x="460" y="308" width="6" height="8"/>
+              <rect x="448" y="328" width="6" height="8"/>
+              <rect x="448" y="348" width="6" height="8"/><rect x="460" y="348" width="6" height="8"/>
+            </g>
+
+            <!-- Ground -->
+            <rect x="0" y="450" width="500" height="170" fill="#e8c8cc" opacity="0.5"/>
+            <!-- Water shimmer -->
+            <line x1="0" y1="462" x2="500" y2="462" stroke="rgba(200,16,46,0.15)" stroke-width="1"/>
+            <line x1="0" y1="475" x2="500" y2="475" stroke="rgba(200,16,46,0.08)" stroke-width="0.5"/>
+            <!-- Reflections -->
+            <rect x="240" y="455" width="20" height="55" fill="rgba(200,16,46,0.15)" opacity="0.5"/>
+            <rect x="135" y="460" width="8" height="35" fill="rgba(200,16,46,0.1)" opacity="0.5"/>
+
+            <!-- FIT watermark -->
+            <text x="250" y="560" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="72" fill="rgba(200,16,46,0.07)" letter-spacing="10">FIT</text>
+
+            <!-- Foreground -->
+            <rect x="0" y="560" width="500" height="60" fill="rgba(200,120,120,0.18)"/>
+            <line x1="250" y1="565" x2="250" y2="620" stroke="rgba(200,16,46,0.12)" stroke-width="2" stroke-dasharray="10,8"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-stat-strip">
+        <div class="stat-item">
+          <span class="stat-num">20<span style="font-size:18px">+</span></span>
+          <span class="stat-label">Programs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">60<span style="font-size:18px">+</span></span>
+          <span class="stat-label">Instructors</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">3.7k<span style="font-size:18px">+</span></span>
+          <span class="stat-label">Students</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100<span style="font-size:18px">%</span></span>
+          <span class="stat-label">Certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Management Courses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Finance & Accounting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Education Diplomas<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Language Programs<span class="ticker-dot"></span></span>
+    <span class="ticker-item">KHDA Approved<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Dubai, UAE<span class="ticker-dot"></span></span>
+    <span class="ticker-item">200+ Nationalities<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Industry-Led Faculty<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Management Courses<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Finance & Accounting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Education Diplomas<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Language Programs<span class="ticker-dot"></span></span>
+    <span class="ticker-item">KHDA Approved<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Dubai, UAE<span class="ticker-dot"></span></span>
+    <span class="ticker-item">200+ Nationalities<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Industry-Led Faculty<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs">
+  <div class="programs-header">
+    <div>
+      <div class="section-label">Learning Pathways</div>
+      <h2 class="section-title">Programs <em>Built</em><br>for <strong>Real Careers</strong></h2>
+      <p class="programs-desc">Each curriculum is co-designed with Dubai's top employers — bridging the gap between academic learning and professional excellence.</p>
+    </div>
+    <a href="#" class="view-all-link">View All Programs</a>
+  </div>
+
+  <div class="programs-grid">
+    <!-- Management -->
+    <div class="program-card reveal">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="program-count">6 Courses · 783 Students</div>
+      <div class="program-name">Management<br>Courses</div>
+      <p class="program-desc-short">From HR to Digital Marketing — leadership diplomas designed for the modern business landscape.</p>
+      <div class="program-courses">
+        <span class="course-tag">HR Management</span>
+        <span class="course-tag">Digital Marketing</span>
+        <span class="course-tag">Hospitality</span>
+        <span class="course-tag">Fashion Design</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="program-card reveal reveal-delay-1">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="program-count">7 Courses · 1,376 Students</div>
+      <div class="program-name">Educational<br>Courses</div>
+      <p class="program-desc-short">Accredited teacher development diplomas in early childhood, SEN, ABA, and Montessori methods.</p>
+      <div class="program-courses">
+        <span class="course-tag">Early Childhood</span>
+        <span class="course-tag">SEN Diploma</span>
+        <span class="course-tag">ABA Cert</span>
+        <span class="course-tag">Montessori</span>
+      </div>
+    </div>
+
+    <!-- Finance -->
+    <div class="program-card reveal reveal-delay-2">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div class="program-count">8 Courses · 685 Students</div>
+      <div class="program-name">Finance<br>Courses</div>
+      <p class="program-desc-short">Professional finance certifications including CMA, CPA, IFRS, AML, and UAE Corporate Tax compliance.</p>
+      <div class="program-courses">
+        <span class="course-tag">CMA</span>
+        <span class="course-tag">CPA</span>
+        <span class="course-tag">IFRS</span>
+        <span class="course-tag">UAE Tax</span>
+      </div>
+    </div>
+
+    <!-- Language -->
+    <div class="program-card reveal reveal-delay-3">
+      <div class="program-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="program-count">5 Courses · 912 Students</div>
+      <div class="program-name">Language<br>Courses</div>
+      <p class="program-desc-short">Immersive language training in Arabic, English, French, and Spanish for personal and professional growth.</p>
+      <div class="program-courses">
+        <span class="course-tag">Arabic</span>
+        <span class="course-tag">English</span>
+        <span class="course-tag">French</span>
+        <span class="course-tag">Spanish</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="band-stat">
+    <span class="band-num">3,756<span style="font-size:28px">+</span></span>
+    <span class="band-label">Students Enrolled</span>
+  </div>
+  <div class="band-stat">
+    <span class="band-num">20<span style="font-size:28px">+</span></span>
+    <span class="band-label">Professional Programs</span>
+  </div>
+  <div class="band-stat">
+    <span class="band-num">60<span style="font-size:28px">+</span></span>
+    <span class="band-label">Expert Instructors</span>
+  </div>
+  <div class="band-stat">
+    <span class="band-num">200<span style="font-size:28px">+</span></span>
+    <span class="band-label">Nationalities</span>
+  </div>
+</div>
+
+<!-- WHY FIT -->
+<section class="why">
+  <div class="why-visual reveal">
+    <div class="why-img-wrap">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:420px">
+        <defs>
+          <linearGradient id="room-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#fdf2f2"/>
+            <stop offset="100%" style="stop-color:#f8e0e2"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#room-grad)"/>
+        <!-- Room perspective -->
+        <polygon points="60,80 340,80 400,0 0,0" fill="#f0d8da"/>
+        <polygon points="0,0 60,80 60,500 0,500" fill="#e8d0d2"/>
+        <!-- Back wall -->
+        <rect x="60" y="80" width="280" height="340" fill="#fdf6f6"/>
+        <!-- Screen/board -->
+        <rect x="90" y="100" width="220" height="130" fill="#fff" stroke="rgba(200,16,46,0.3)" stroke-width="1.5"/>
+        <rect x="95" y="105" width="210" height="120" fill="#fff8f8"/>
+        <!-- Screen content -->
+        <text x="200" y="145" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="rgba(200,16,46,0.8)" letter-spacing="4">FIT INSTITUTE</text>
+        <text x="200" y="168" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(60,20,30,0.4)" letter-spacing="2">KHDA APPROVED — DUBAI</text>
+        <line x1="120" y1="183" x2="280" y2="183" stroke="rgba(200,16,46,0.15)" stroke-width="1"/>
+        <text x="200" y="200" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(60,20,30,0.3)" letter-spacing="1">Excellence in Professional Training</text>
+        <line x1="180" y1="228" x2="220" y2="228" stroke="rgba(200,16,46,0.2)" stroke-width="1"/>
+        <!-- Projector beam -->
+        <polygon points="200,55 170,100 230,100" fill="rgba(200,16,46,0.04)"/>
+        <circle cx="200" cy="55" r="6" fill="#f0e0e0" stroke="rgba(200,16,46,0.2)" stroke-width="1"/>
+        <!-- Desks -->
+        <g opacity="0.9">
+          <rect x="100" y="300" width="70" height="35" fill="#f5e0e0" rx="2"/>
+          <rect x="185" y="300" width="70" height="35" fill="#f5e0e0" rx="2"/>
+          <rect x="270" y="300" width="70" height="35" fill="#f5e0e0" rx="2"/>
+          <rect x="80" y="360" width="70" height="35" fill="#f0d8d8" rx="2"/>
+          <rect x="165" y="360" width="70" height="35" fill="#f0d8d8" rx="2"/>
+          <rect x="255" y="360" width="70" height="35" fill="#f0d8d8" rx="2"/>
+          <rect x="110" y="306" width="50" height="5" fill="rgba(200,16,46,0.12)" rx="1"/>
+          <rect x="195" y="306" width="50" height="5" fill="rgba(200,16,46,0.12)" rx="1"/>
+          <rect x="280" y="306" width="50" height="5" fill="rgba(200,16,46,0.12)" rx="1"/>
+          <rect x="112" y="295" width="30" height="5" fill="#e8c8c8" rx="1"/>
+          <rect x="197" y="295" width="30" height="5" fill="#e8c8c8" rx="1"/>
+        </g>
+        <!-- Figures -->
+        <g fill="rgba(200,16,46,0.5)">
+          <circle cx="135" cy="290" r="8"/><rect x="128" y="298" width="14" height="12" rx="2"/>
+          <circle cx="220" cy="290" r="8"/><rect x="213" y="298" width="14" height="12" rx="2"/>
+          <circle cx="305" cy="290" r="8"/><rect x="298" y="298" width="14" height="12" rx="2"/>
+          <circle cx="115" cy="350" r="8"/><rect x="108" y="358" width="14" height="12" rx="2"/>
+          <circle cx="200" cy="350" r="8"/><rect x="193" y="358" width="14" height="12" rx="2"/>
+          <circle cx="290" cy="350" r="8"/><rect x="283" y="358" width="14" height="12" rx="2"/>
+        </g>
+        <!-- Floor -->
+        <rect x="60" y="420" width="280" height="80" fill="#f0d8da" opacity="0.6"/>
+        <!-- Red accent stripe -->
+        <rect x="60" y="80" width="280" height="3" fill="var(--red)" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="why-accent">
+      <span class="why-accent-num">5<span class="why-num-small">★</span></span>
+      <span class="why-accent-label">Google Reviews<br>120+ Verified</span>
+    </div>
+  </div>
+
+  <div class="why-content reveal reveal-delay-1">
+    <div class="section-label">Why Choose FIT</div>
+    <h2 class="section-title">Where <em>Ambition</em><br>Meets <strong>Opportunity</strong></h2>
+    <p style="font-size:14px;line-height:1.8;color:var(--text-body);margin-top:20px;max-width:400px">Located at the heart of Dubai's JLT district, FIT Institute has been empowering professionals from over 200 nationalities to unlock their full potential.</p>
+
+    <div class="why-features">
+      <div class="why-feature">
+        <div class="feature-num">01</div>
+        <div class="feature-text">
+          <h4>Tailored Learning Paths</h4>
+          <p>Programs designed around Dubai's dynamic economy — practical, relevant, and immediately applicable to your career.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="feature-num">02</div>
+        <div class="feature-text">
+          <h4>World-Class Expertise</h4>
+          <p>Our faculty are seasoned industry practitioners — bringing real-world insight into every classroom session.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="feature-num">03</div>
+        <div class="feature-text">
+          <h4>Flexible Scheduling</h4>
+          <p>Weekend, evening, and online options designed to fit around your professional commitments.</p>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="feature-num">04</div>
+        <div class="feature-text">
+          <h4>KHDA Certified Programs</h4>
+          <p>All programs carry full KHDA accreditation — credentials recognized across the UAE and internationally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <div>
+      <div class="section-label">Student Stories</div>
+      <h2 class="section-title"><em>Voices</em> of<br><strong>Our Alumni</strong></h2>
+    </div>
+    <a href="#" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--text-muted)'">All Reviews →</a>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testi-text">"The ABA course was incredibly practical and the instructors provided real-life examples that I can apply immediately. I gained skills and confidence that will shape my entire career."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">E</div>
+        <div>
+          <div class="testi-name">Emmanuel (Papa Nii)</div>
+          <div class="testi-course">ABA Certification Course</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testi-text">"The Special Education course was rich with valuable information and Dr. Antina made each session full of energy. The registration team was also incredibly supportive throughout."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Suzan N.</div>
+          <div class="testi-course">Diploma in Special Education</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testi-text">"My Diploma in BM with Dr. Faran was exceptional. FIT Institute truly acted as my career pathfinder. Mariam Zidan and the entire team gave outstanding support from start to finish."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Samuel Juma</div>
+          <div class="testi-course">Diploma in Business Management</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATION -->
+<div class="accred reveal">
+  <div class="accred-left">
+    <div class="section-label">Accreditation & Recognition</div>
+    <h2 class="accred-title">Officially Approved by<br><strong>KHDA Dubai</strong></h2>
+    <p class="accred-text">Every program at FIT Institute is accredited by the Knowledge and Human Development Authority (KHDA) of Dubai — ensuring your qualifications carry weight across the UAE and beyond.</p>
+  </div>
+  <div class="accred-badges">
+    <div class="accred-badge">
+      <div class="accred-badge-name">KHDA</div>
+      <div class="accred-badge-sub">Knowledge & Human Dev. Authority</div>
+    </div>
+    <div class="accred-badge">
+      <div class="accred-badge-name">Dubai</div>
+      <div class="accred-badge-sub">Government Approved</div>
+    </div>
+    <div class="accred-badge">
+      <div class="accred-badge-name">ISO</div>
+      <div class="accred-badge-sub">Quality Certified</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div>
+    <div class="cta-label">Ready to Begin?</div>
+    <h2 class="cta-title">Take the First Step<br>Toward <em>Your Future</em></h2>
+  </div>
+  <div class="cta-actions">
+    <a href="#" class="btn-white">Apply Now</a>
+    <a href="#" class="btn-ghost">📞 +971 52 887 6388</a>
+    <a href="#" class="btn-ghost" style="font-size:11px">📍 JLT, Dubai, UAE</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-logo">F<span>I</span>T</span>
+      <p class="footer-tagline">Future Innovator Training Institute — where ambition meets opportunity in the heart of Dubai.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">ig</a>
+        <a href="#" class="social-btn">wa</a>
+      </div>
+    </div>
+    <div>
+      <h5>Programs</h5>
+      <ul class="footer-links">
+        <li><a href="#">Management Courses</a></li>
+        <li><a href="#">Educational Courses</a></li>
+        <li><a href="#">Finance Courses</a></li>
+        <li><a href="#">Language Courses</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Institute</h5>
+      <ul class="footer-links">
+        <li><a href="#">About FIT</a></li>
+        <li><a href="#">Our Faculty</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>3703, HDS Business Centre,<br>Cluster M – JLT, Dubai</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+971 52 887 6388</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bcddd8d1d5cfcfd5d3d2cffcdad5c8d5d9d8c992dfd3d1">[email&#160;protected]</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2024 Future Innovator Training Institute DMCC. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Sitemap</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) { el.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(251,249,246,0.98)';
+      nav.style.boxShadow = '0 4px 30px rgba(26,16,20,0.08)';
+    } else {
+      nav.style.background = 'rgba(251,249,246,0.92)';
+      nav.style.boxShadow = '0 2px 30px rgba(26,16,20,0.06)';
+    }
+  });
+</script>
+</body>
+</html>
